@@ -1,0 +1,72 @@
+---
+import { clients } from "../../data/clients";
+import SectionHeading from "../SectionHeading.astro";
+
+const groups = new Map<string, string[]>();
+for (const client of clients) {
+  const names = groups.get(client.category) ?? [];
+  names.push(client.name);
+  groups.set(client.category, names);
+}
+---
+
+<section id="clients" class="section" aria-labelledby="clients-heading">
+  <SectionHeading id="clients-heading" en="CLIENTS" ja="取引実績" />
+
+  <div class="container">
+    <div class="clients__groups">
+      {
+        [...groups].map(([category, names]) => (
+          <div class="clients__group">
+            <p class="clients__category">{category}</p>
+            <ul class="clients__list">
+              {names.map((name) => (
+                <li>{name}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+    <p class="clients__note">敬称略</p>
+  </div>
+</section>
+
+<style>
+  .clients__groups {
+    display: grid;
+    gap: var(--space-8);
+    margin: var(--space-12) 0 0;
+    padding-inline: var(--space-8);
+  }
+
+  .clients__group {
+    padding-block: var(--space-6);
+    border-top: var(--rule-hair) solid var(--color-rule);
+  }
+
+  .clients__category {
+    margin: 0 0 var(--space-4);
+    color: var(--color-accent);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: var(--tracking-jp);
+  }
+
+  .clients__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-6);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--color-text-muted);
+  }
+
+  .clients__note {
+    margin: var(--space-6) 0 0;
+    padding-inline: var(--space-8);
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+  }
+</style>

@@ -1,0 +1,72 @@
+---
+import { services } from "../../data/services";
+import SectionHeading from "../SectionHeading.astro";
+---
+
+<section id="services" class="section" aria-labelledby="services-heading">
+  <SectionHeading id="services-heading" en="SERVICES" ja="サービス" />
+
+  <div class="container">
+    <ul class="services__grid">
+      {
+        services.map((service) => (
+          <li class="services__card plate">
+            <p class="services__title-en label-latin">{service.titleEn}</p>
+            <h3 class="services__title">{service.title}</h3>
+            <p class="services__summary">{service.summary}</p>
+            <ul class="services__points">
+              {service.points.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .services__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-8);
+    list-style: none;
+    margin: var(--space-12) 0 0;
+    padding: 0;
+  }
+
+  .services__card {
+    padding: var(--space-8);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .services__title-en {
+    margin: 0 0 var(--space-2);
+    color: var(--color-accent);
+  }
+
+  .services__title {
+    margin: 0 0 var(--space-4);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    letter-spacing: var(--tracking-jp);
+  }
+
+  .services__summary {
+    margin: 0 0 var(--space-6);
+    color: var(--color-text-muted);
+  }
+
+  .services__points {
+    display: grid;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: var(--rule-hair) solid var(--color-rule);
+    padding-top: var(--space-4);
+    font-size: var(--text-sm);
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+interface Props {
+  /** id for the <h2>; the parent <section> points aria-labelledby at it. */
+  id: string;
+  /** Japanese heading — carries the accessible name. */
+  ja: string;
+  /** Latin eyebrow. Decorative duplication, hidden from assistive tech. */
+  en: string;
+}
+
+const { id, ja, en } = Astro.props;
+---
+
+<div class="heading plate">
+  <p class="heading__eyebrow label-latin" aria-hidden="true">{en}</p>
+  <h2 class="heading__title" {id}>{ja}</h2>
+</div>
+
+<style>
+  .heading {
+    padding: var(--space-6) var(--space-8);
+    /* text-align is not set here: it inherits from the parent section, which
+       is how a section centers its heading across the component boundary
+       that Astro's scoped styles cannot cross. */
+  }
+
+  .heading__eyebrow {
+    margin: 0 0 var(--space-2);
+    color: var(--color-accent);
+  }
+
+  .heading__title {
+    margin: 0;
+    color: var(--color-text);
+    font-size: var(--text-2xl);
+    font-weight: 500;
+    letter-spacing: var(--tracking-jp);
+  }
+</style>

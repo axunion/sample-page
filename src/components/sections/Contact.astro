@@ -1,0 +1,75 @@
+---
+import { company } from "../../data/company";
+import SectionHeading from "../SectionHeading.astro";
+---
+
+<section id="contact" class="section" aria-labelledby="contact-heading">
+  <SectionHeading id="contact-heading" en="CONTACT" ja="お問い合わせ" />
+
+  <div class="container">
+    <div class="contact plate">
+      <p class="contact__lead">
+        現場運営や人材育成についてのご相談、資料請求など、お気軽にお問い合わせください。
+      </p>
+
+      <dl class="contact__details">
+        <div>
+          <dt>電話</dt>
+          <dd><a href={company.telHref}>{company.tel}</a></dd>
+        </div>
+        <div>
+          <dt>メール</dt>
+          <dd><a href={`mailto:${company.email}`}>{company.email}</a></dd>
+        </div>
+        <div>
+          <dt>受付時間</dt>
+          <dd>{company.businessHours}</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    max-width: var(--width-content);
+    margin: var(--space-12) 0 0;
+    padding: var(--space-10) var(--space-8);
+  }
+
+  .contact__lead {
+    max-width: var(--width-text);
+    margin: 0 0 var(--space-8);
+    color: var(--color-text-muted);
+  }
+
+  .contact__details {
+    display: grid;
+    gap: var(--space-6);
+    margin: 0;
+  }
+
+  .contact__details dt {
+    color: var(--color-accent);
+    font-size: var(--text-sm);
+  }
+
+  .contact__details dd {
+    margin: var(--space-1) 0 0;
+    font-size: var(--text-lg);
+  }
+
+  .contact__details a {
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  @media (width >= 40rem) {
+    .contact__details {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

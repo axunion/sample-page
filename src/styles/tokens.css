@@ -1,0 +1,97 @@
+/*
+ * Design tokens — the single place brand values live.
+ * No selectors, no at-rules: only :root custom properties.
+ * Surface-level overrides (e.g. dark sections) live in global.css instead.
+ */
+:root {
+  /* --- brand primitives -------------------------------------------------- */
+  --navy-900: #0b1524;
+  --navy-800: #101f33;
+  --navy-700: #162941;
+  --navy-600: #1e3450;
+  --gold-700: #6f5327;
+  --gold-500: #b08d57;
+  --gold-400: #c9a86a;
+  --gold-300: #d9bf86;
+  --ivory: #f5f2ea;
+  --white: #ffffff;
+  --ink-700: #33415c;
+  --slate-300: #b9c3d0;
+
+  /* --- semantic roles ------------------------------------------------------
+   * Default to the light surface. .section--dark in global.css re-points
+   * these to their dark-surface values — components never branch on tone.
+   */
+  --color-bg: var(--ivory);
+  --color-surface: var(--white);
+  --color-text: var(--navy-900);
+  --color-text-muted: var(--ink-700);
+  --color-accent: var(
+    --gold-700
+  ); /* gold as TEXT — only legal on the light surface */
+  --color-rule: var(
+    --gold-500
+  ); /* gold as a hairline — decoration only, never text */
+  --color-focus: var(--navy-900);
+  --color-border: var(--navy-600);
+
+  /* --- type ---------------------------------------------------------------
+   * --font-shippori / --font-jost are declared by Astro's <Font> component
+   * (astro.config.mjs `fonts`). Alias them here rather than reading them
+   * directly, since both files write to :root and a shared name would race.
+   * --font-body has no self-hosted counterpart: see astro.config.mjs for why.
+   */
+  --font-display: var(--font-shippori);
+  --font-latin: var(--font-jost);
+  --font-body:
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", YuGothic,
+    "Yu Gothic", "BIZ UDPGothic", Meiryo, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.375rem, 1rem + 1.2vw, 1.75rem);
+  --text-2xl: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  --text-3xl: clamp(2.25rem, 1.4rem + 3.4vw, 3.75rem);
+
+  --leading-body: 1.85;
+  --leading-heading: 1.45;
+  --tracking-jp: 0.04em;
+  --tracking-latin: 0.18em;
+
+  /* --- space / layout ------------------------------------------------------ */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  --section-py: clamp(4rem, 9vw, 8rem);
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --width-content: 75rem;
+  --width-text: 42rem;
+  --header-height: 4.5rem;
+
+  /* Breakpoints (reference only — lightningcss cannot see @custom-media
+   * across component <style> blocks, so write these literally):
+   * 30rem / 48rem / 64rem / 80rem
+   */
+
+  /* --- the signature device: an engraved gold plate ------------------------ */
+  --rule-hair: 1px;
+  --plate-inset: 0.5rem;
+  --radius: 2px;
+  --shadow-card: 0 1px 2px rgb(11 21 36 / 6%), 0 8px 24px rgb(11 21 36 / 6%);
+
+  /* --- motion ---------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --duration: 200ms;
+}

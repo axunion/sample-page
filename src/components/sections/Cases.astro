@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+import { cases } from "../../data/cases";
+import SectionHeading from "../SectionHeading.astro";
+---
+
+<section id="cases" class="section" aria-labelledby="cases-heading">
+  <SectionHeading id="cases-heading" en="CASES" ja="導入事例" />
+
+  <div class="container">
+    <ul class="cases__grid">
+      {
+        cases.map((item) => (
+          <li class="cases__card plate">
+            <Image
+              class="cases__image"
+              src={item.image}
+              alt={item.imageAlt}
+              width={800}
+              height={600}
+              format="webp"
+              quality={72}
+            />
+            <div class="cases__body">
+              <p class="cases__industry label-latin">{item.industryLabel}</p>
+              <h3 class="cases__client">{item.client}</h3>
+
+              <dl class="cases__flow">
+                <dt>課題</dt>
+                <dd>{item.challenge}</dd>
+                <dt>取り組み</dt>
+                <dd>{item.approach}</dd>
+              </dl>
+
+              <ul class="cases__results">
+                {item.result.map((line) => (
+                  <li>{line}</li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .cases__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-8);
+    list-style: none;
+    margin: var(--space-12) 0 0;
+    padding: 0;
+  }
+
+  .cases__card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .cases__image {
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .cases__body {
+    padding: var(--space-6) var(--space-8) var(--space-8);
+  }
+
+  .cases__industry {
+    margin: 0 0 var(--space-2);
+    color: var(--color-accent);
+  }
+
+  .cases__client {
+    margin: 0 0 var(--space-4);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    letter-spacing: var(--tracking-jp);
+  }
+
+  .cases__flow {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-1) var(--space-3);
+    margin: 0 0 var(--space-6);
+    font-size: var(--text-sm);
+  }
+
+  .cases__flow dt {
+    color: var(--color-accent);
+    font-family: var(--font-latin);
+  }
+
+  .cases__flow dd {
+    margin: 0;
+    color: var(--color-text-muted);
+  }
+
+  .cases__results {
+    display: grid;
+    gap: var(--space-2);
+    margin: 0;
+    padding-top: var(--space-4);
+    border-top: var(--rule-hair) solid var(--color-rule);
+    list-style: none;
+    font-size: var(--text-sm);
+  }
+</style>

@@ -1,0 +1,51 @@
+---
+import SectionHeading from "../SectionHeading.astro";
+---
+
+<section id="philosophy" class="section" aria-labelledby="philosophy-heading">
+  <div class="container philosophy">
+    <SectionHeading id="philosophy-heading" en="PHILOSOPHY" ja="理念" />
+
+    <div class="philosophy__body">
+      <p class="philosophy__lead">
+        人が育つ現場をつくる。<br />
+        それが、紬という社名に込めた想いです。
+      </p>
+      <p>
+        ホテル、フィットネスクラブ、ウェルネス施設——業種は違っても、現場の質を決めるのはいつも「人」でした。マニュアルだけでは伝わらない所作、言葉にしにくい気配り。私たちは、その一つひとつを言語化し、次の世代へ引き継ぐ仕組みをつくっています。
+      </p>
+      <p>
+        創業のきっかけは、現場で培ってきた経験の中で「これは他社には真似できない」と実感したことでした。その強みをより多くの企業や、これから現場で働く方々に届けたい。そう考え、私たちはこの会社を立ち上げました。
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .philosophy {
+    display: grid;
+    gap: var(--space-12);
+  }
+
+  .philosophy__body {
+    max-width: var(--width-text);
+    margin-inline: auto;
+    padding-inline: var(--space-8);
+  }
+
+  .philosophy__lead {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 500;
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-jp);
+  }
+
+  .philosophy__body p {
+    color: var(--color-text-muted);
+  }
+
+  .philosophy__body p + p {
+    margin-top: var(--space-6);
+  }
+</style>

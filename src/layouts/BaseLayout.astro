@@ -1,0 +1,85 @@
+---
+import { Font, getImage } from "astro:assets";
+import heroImage from "../assets/images/hero-concierge.jpg";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { company } from "../data/company";
+import { site } from "../data/site";
+import "../styles/tokens.css";
+import "../styles/global.css";
+
+interface Props {
+  /** Used verbatim as <title> — compose any suffix at the call site. */
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+
+// The OG image is derived from the hero photo rather than hand-authored —
+// this keeps one source of truth instead of a separate static asset to
+// keep in sync with it.
+const ogImage = await getImage({
+  src: heroImage,
+  width: 1200,
+  height: 630,
+  format: "jpeg",
+});
+const ogImageUrl = new URL(ogImage.src, Astro.site);
+
+const organization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: site.name,
+  alternateName: site.nameEn,
+  url: Astro.site,
+  description: site.description,
+  telephone: company.tel,
+  email: company.email,
+  foundingDate: company.established,
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "JP",
+    postalCode: company.address.postalCode,
+    addressRegion: company.address.region,
+    addressLocality: company.address.locality,
+    streetAddress: company.address.street,
+  },
+};
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0b1524" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content={site.locale} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <Font cssVariable="--font-shippori" />
+    <Font cssVariable="--font-jost" preload={[{ weight: 400 }, { weight: 500 }]} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(organization)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へスキップ</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

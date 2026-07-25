@@ -1,0 +1,190 @@
+/*
+ * Reset, base elements, and utility classes shared by three or more
+ * components. Anything used in only one or two places belongs in that
+ * component's scoped <style> instead.
+ */
+
+/* --- reset ------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- base elements ------------------------------------------------------ */
+html {
+  background: var(--color-bg);
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: var(--leading-heading);
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* --- layout utilities ----------------------------------------------------- */
+.container {
+  max-width: var(--width-content);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section-py);
+  background: var(--color-bg);
+  color: var(--color-text);
+  scroll-margin-top: var(--header-height);
+}
+
+.section--dark {
+  --color-bg: var(--navy-900);
+  --color-surface: var(--navy-800);
+  --color-text: var(--white);
+  --color-text-muted: var(--slate-300);
+  --color-accent: var(--gold-400); /* 8.1:1 on navy-900 */
+  --color-rule: var(--gold-500);
+  --color-focus: var(--gold-300); /* 10.2:1 on navy-900 */
+  --color-border: var(--gold-700);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* --- the signature device: an engraved gold plate ------------------------ */
+.plate {
+  position: relative;
+}
+
+.plate::before {
+  content: "";
+  position: absolute;
+  inset: var(--plate-inset);
+  border: var(--rule-hair) solid var(--color-rule);
+  pointer-events: none;
+}
+
+@media (width < 30rem) {
+  .plate {
+    --plate-inset: 0.375rem;
+  }
+}
+
+/* --- text utilities -------------------------------------------------------- */
+.label-latin {
+  font-family: var(--font-latin);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-latin);
+  text-transform: uppercase;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  background: var(--navy-900);
+  color: var(--white);
+  border: var(--rule-hair) solid var(--gold-500);
+
+  &:focus {
+    top: var(--space-4);
+  }
+}
+
+/* --- buttons --------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-latin);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-latin);
+  text-transform: uppercase;
+  text-decoration: none;
+  border: var(--rule-hair) solid transparent;
+  border-radius: var(--radius);
+  transition:
+    background-color var(--duration) var(--ease-out),
+    color var(--duration) var(--ease-out),
+    border-color var(--duration) var(--ease-out);
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+.btn--primary {
+  background: var(--gold-500);
+  color: var(--navy-900);
+  border-color: var(--gold-500);
+
+  &:hover {
+    background: var(--gold-400);
+    border-color: var(--gold-400);
+  }
+}
+
+.btn--ghost {
+  background: transparent;
+  color: inherit;
+  border-color: currentColor;
+
+  &:hover {
+    background: rgb(255 255 255 / 8%);
+  }
+}

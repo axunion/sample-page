@@ -1,0 +1,111 @@
+---
+import { company } from "../../data/company";
+import SectionHeading from "../SectionHeading.astro";
+---
+
+<section id="company" class="section" aria-labelledby="company-heading">
+  <SectionHeading id="company-heading" en="COMPANY" ja="会社概要" />
+
+  <div class="container">
+    <table class="company-table">
+      <tbody>
+        <tr>
+          <th scope="row">商号</th>
+          <td>
+            {company.name}
+            <span class="company-table__en label-latin">{company.nameEn}</span>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">設立</th>
+          <td>{company.established}</td>
+        </tr>
+        <tr>
+          <th scope="row">資本金</th>
+          <td>{company.capital}</td>
+        </tr>
+        <tr>
+          <th scope="row">代表者</th>
+          <td>{company.representative}</td>
+        </tr>
+        <tr>
+          <th scope="row">従業員数</th>
+          <td>{company.employees}</td>
+        </tr>
+        <tr>
+          <th scope="row">事業内容</th>
+          <td>
+            <ul class="company-table__list">
+              {company.businessLines.map((line) => (
+                <li>{line}</li>
+              ))}
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">所在地</th>
+          <td>
+            〒{company.address.postalCode}{" "}
+            {company.address.region}{company.address.locality}{company.address.street}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<style>
+  .company-table {
+    width: 100%;
+    max-width: var(--width-content);
+    margin: var(--space-12) 0 0;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+
+  .company-table tr {
+    border-top: var(--rule-hair) solid var(--color-rule);
+  }
+
+  .company-table tr:last-child {
+    border-bottom: var(--rule-hair) solid var(--color-rule);
+  }
+
+  .company-table th,
+  .company-table td {
+    padding: var(--space-4) var(--space-4);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .company-table th {
+    inline-size: 8rem;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .company-table td {
+    color: var(--color-text-muted);
+  }
+
+  .company-table__en {
+    margin-inline-start: var(--space-3);
+  }
+
+  .company-table__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  @media (width < 30rem) {
+    .company-table th {
+      inline-size: auto;
+    }
+
+    .company-table tr {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+</style>

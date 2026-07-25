@@ -1,0 +1,68 @@
+---
+import { stats } from "../../data/stats";
+import SectionHeading from "../SectionHeading.astro";
+---
+
+<section id="stats" class="section section--dark" aria-labelledby="stats-heading">
+  <SectionHeading id="stats-heading" en="TRACK RECORD" ja="実績数値" />
+
+  <div class="container">
+    <dl class="stats__grid">
+      {
+        stats.map((stat) => (
+          <div class="stats__item plate">
+            <dd class="stats__value">
+              <span class="stats__number">{stat.value}</span>
+              <span class="stats__unit">{stat.unit}</span>
+            </dd>
+            <dt class="stats__label">{stat.label}</dt>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>
+
+<style>
+  .stats__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    gap: var(--space-6);
+    margin: var(--space-12) 0 0;
+  }
+
+  .stats__item {
+    padding: var(--space-8) var(--space-6);
+    text-align: center;
+  }
+
+  .stats__value {
+    margin: 0;
+  }
+
+  .stats__number {
+    font-family: var(--font-latin);
+    font-size: var(--text-3xl);
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .stats__unit {
+    margin-inline-start: var(--space-1);
+    color: var(--color-accent);
+    font-family: var(--font-latin);
+    font-size: var(--text-lg);
+  }
+
+  .stats__label {
+    margin-top: var(--space-2);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  @media (width < 30rem) {
+    .stats__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
