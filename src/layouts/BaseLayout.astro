@@ -37,7 +37,8 @@ const organization = {
   description: site.description,
   telephone: company.tel,
   email: company.email,
-  foundingDate: company.established,
+  // company.established is a Japanese display string ("2016年4月"), not
+  // ISO 8601, so it is intentionally not passed here as `foundingDate`.
   address: {
     "@type": "PostalAddress",
     addressCountry: "JP",

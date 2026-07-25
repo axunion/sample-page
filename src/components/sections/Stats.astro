@@ -11,11 +11,11 @@ import SectionHeading from "../SectionHeading.astro";
       {
         stats.map((stat) => (
           <div class="stats__item plate">
+            <dt class="stats__label">{stat.label}</dt>
             <dd class="stats__value">
               <span class="stats__number">{stat.value}</span>
               <span class="stats__unit">{stat.unit}</span>
             </dd>
-            <dt class="stats__label">{stat.label}</dt>
           </div>
         ))
       }
@@ -32,6 +32,9 @@ import SectionHeading from "../SectionHeading.astro";
   }
 
   .stats__item {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--space-2);
     padding: var(--space-8) var(--space-6);
     text-align: center;
   }
@@ -50,12 +53,11 @@ import SectionHeading from "../SectionHeading.astro";
   .stats__unit {
     margin-inline-start: var(--space-1);
     color: var(--color-accent);
-    font-family: var(--font-latin);
     font-size: var(--text-lg);
   }
 
   .stats__label {
-    margin-top: var(--space-2);
+    margin: 0;
     color: var(--color-text-muted);
     font-size: var(--text-sm);
   }

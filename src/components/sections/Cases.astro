@@ -11,7 +11,7 @@ import SectionHeading from "../SectionHeading.astro";
     <ul class="cases__grid">
       {
         cases.map((item) => (
-          <li class="cases__card plate">
+          <li class="cases__card">
             <Image
               class="cases__image"
               src={item.image}
@@ -21,8 +21,8 @@ import SectionHeading from "../SectionHeading.astro";
               format="webp"
               quality={72}
             />
-            <div class="cases__body">
-              <p class="cases__industry label-latin">{item.industryLabel}</p>
+            <div class="cases__body plate">
+              <p class="cases__industry">{item.industryLabel}</p>
               <h3 class="cases__client">{item.client}</h3>
 
               <dl class="cases__flow">
@@ -76,6 +76,9 @@ import SectionHeading from "../SectionHeading.astro";
   .cases__industry {
     margin: 0 0 var(--space-2);
     color: var(--color-accent);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: var(--tracking-jp);
   }
 
   .cases__client {
