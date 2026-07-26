@@ -17,6 +17,11 @@ interface Props {
 const { title, description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 
+// True only on the temporary GitHub Pages preview build (see
+// .github/workflows/deploy.yml) — keeps the client-review deployment out of
+// search results without affecting the real production build.
+const isGithubPagesPreview = import.meta.env.GITHUB_PAGES === "true";
+
 // The OG image is derived from the hero photo rather than hand-authored —
 // this keeps one source of truth instead of a separate static asset to
 // keep in sync with it.
@@ -57,7 +62,8 @@ const organization = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
+    {isGithubPagesPreview && <meta name="robots" content="noindex, nofollow" />}
     <meta name="theme-color" content="#0b1524" />
     <meta name="generator" content={Astro.generator} />
 

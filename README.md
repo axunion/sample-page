@@ -53,6 +53,24 @@ All commands run from the project root:
 | `pnpm fix`       | Format and lint with Biome                        |
 | `pnpm astro ...` | Run Astro CLI commands, e.g. `astro check`        |
 
+## Temporary GitHub Pages preview
+
+`.github/workflows/deploy.yml` builds and deploys this repo to GitHub Pages on every
+push to `main`, at `https://axunion.github.io/sample-page/`, for client review before the
+real domain is ready. Requires **Settings → Pages → Source = "GitHub Actions"** to be set
+once, manually, before the first run.
+
+This preview build sets `GITHUB_PAGES=true`, which `astro.config.mjs` uses to switch
+`site`/`base` to the GitHub Pages URL, and which `BaseLayout.astro` uses to emit
+`<meta name="robots" content="noindex, nofollow">`. Neither applies to the real
+production build (no env var set), so no cleanup is needed when this repo moves to the
+rental server.
+
+`noindex` only asks well-behaved crawlers not to index the page — the URL is still
+public and unauthenticated if guessed or linked. It is not access control. If the client
+needs the preview to be actually private, that requires a different host (e.g.
+Cloudflare Pages + Access) rather than GitHub Pages.
+
 ## Fonts
 
 Headings use Shippori Mincho B1 and Latin labels use Jost, both self-hosted via Astro's
