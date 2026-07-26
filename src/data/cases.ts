@@ -9,7 +9,6 @@ import caseWellness from "../assets/images/case-wellness.jpg";
 export type CaseStudy = {
   readonly id: string;
   readonly client: string;
-  readonly industry: "hotel" | "fitness" | "wellness";
   readonly industryLabel: string;
   readonly challenge: string;
   readonly approach: string;
@@ -22,7 +21,6 @@ export const cases = [
   {
     id: "hotel",
     client: "ホテル・ヴェルダン東京",
-    industry: "hotel",
     industryLabel: "ホテル",
     challenge:
       "客室稼働率の上昇に伴い、フロント・ベルスタッフの人手不足と新人教育の停滞が課題に。",
@@ -39,7 +37,6 @@ export const cases = [
   {
     id: "fitness",
     client: "クラブフィット町田",
-    industry: "fitness",
     industryLabel: "フィットネス",
     challenge:
       "トレーナーの経験差によって指導品質にばらつきがあり、退会率の増加が続いていた。",
@@ -56,7 +53,6 @@ export const cases = [
   {
     id: "wellness",
     client: "アーバンスパ&ウェルネス青山",
-    industry: "wellness",
     industryLabel: "ウェルネス",
     challenge:
       "拠点拡大にあわせてセラピスト採用を進めたが、施術品質の均一化が追いつかなかった。",

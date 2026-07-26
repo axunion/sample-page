@@ -20,6 +20,10 @@ const { id, ja, en } = Astro.props;
   /* text-align is not set on .heading: it inherits from the parent section,
      which is how a section centers its heading across the component
      boundary that Astro's scoped styles cannot cross. */
+  .heading {
+    margin-block-end: var(--space-12);
+  }
+
   .heading::before {
     content: "";
     display: block;

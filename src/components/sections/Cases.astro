@@ -8,7 +8,7 @@ import SectionHeading from "../SectionHeading.astro";
   <SectionHeading id="cases-heading" en="CASES" ja="導入事例" />
 
   <div class="container">
-    <ul class="cases__grid reveal">
+    <ul class="cases__grid list-reset reveal">
       {
         cases.map((item) => (
           <li class="cases__card">
@@ -32,7 +32,7 @@ import SectionHeading from "../SectionHeading.astro";
                 <dd>{item.approach}</dd>
               </dl>
 
-              <ul class="cases__results">
+              <ul class="cases__results list-reset">
                 {item.result.map((line) => (
                   <li>{line}</li>
                 ))}
@@ -50,9 +50,6 @@ import SectionHeading from "../SectionHeading.astro";
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
     gap: var(--space-8);
-    list-style: none;
-    margin: var(--space-12) 0 0;
-    padding: 0;
   }
 
   .cases__card {
@@ -109,10 +106,8 @@ import SectionHeading from "../SectionHeading.astro";
   .cases__results {
     display: grid;
     gap: var(--space-2);
-    margin: 0;
     padding-top: var(--space-4);
     border-top: var(--rule-hair) solid var(--color-rule);
-    list-style: none;
     font-size: var(--text-sm);
   }
 </style>

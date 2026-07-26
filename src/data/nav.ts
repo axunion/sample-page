@@ -4,14 +4,13 @@
 
 export type NavItem = {
   readonly label: string;
-  readonly labelEn: string;
   readonly href: string;
 };
 
 export const nav = [
-  { label: "理念", labelEn: "PHILOSOPHY", href: "#philosophy" },
-  { label: "サービス", labelEn: "SERVICES", href: "#services" },
-  { label: "導入事例", labelEn: "CASES", href: "#cases" },
-  { label: "会社概要", labelEn: "COMPANY", href: "#company" },
-  { label: "お問い合わせ", labelEn: "CONTACT", href: "#contact" },
+  { label: "理念", href: "#philosophy" },
+  { label: "サービス", href: "#services" },
+  { label: "導入事例", href: "#cases" },
+  { label: "会社概要", href: "#company" },
+  { label: "お問い合わせ", href: "#contact" },
 ] as const satisfies readonly NavItem[];

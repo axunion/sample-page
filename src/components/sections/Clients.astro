@@ -19,7 +19,7 @@ for (const client of clients) {
         [...groups].map(([category, names]) => (
           <div class="clients__group">
             <p class="clients__category">{category}</p>
-            <ul class="clients__list">
+            <ul class="clients__list list-reset">
               {names.map((name) => (
                 <li>{name}</li>
               ))}
@@ -36,7 +36,6 @@ for (const client of clients) {
   .clients__groups {
     display: grid;
     gap: var(--space-8);
-    margin: var(--space-12) 0 0;
   }
 
   .clients__group {
@@ -56,9 +55,6 @@ for (const client of clients) {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2) var(--space-6);
-    margin: 0;
-    padding: 0;
-    list-style: none;
     color: var(--color-text-muted);
   }
 

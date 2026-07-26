@@ -7,7 +7,6 @@
   /* --- brand primitives -------------------------------------------------- */
   --navy-900: #0b1524;
   --navy-800: #101f33;
-  --navy-700: #162941;
   --navy-600: #1e3450;
   --gold-700: #6f5327;
   --gold-500: #b08d57;
@@ -72,7 +71,6 @@
   --space-12: 3rem;
   --space-16: 4rem;
   --space-20: 5rem;
-  --space-24: 6rem;
 
   --section-py: clamp(4rem, 9vw, 8rem);
   --gutter: clamp(1.25rem, 4vw, 3rem);
