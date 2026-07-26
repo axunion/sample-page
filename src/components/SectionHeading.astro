@@ -11,17 +11,22 @@ interface Props {
 const { id, ja, en } = Astro.props;
 ---
 
-<div class="heading plate">
+<div class="heading container reveal">
   <p class="heading__eyebrow label-latin" aria-hidden="true">{en}</p>
   <h2 class="heading__title" {id}>{ja}</h2>
 </div>
 
 <style>
-  .heading {
-    padding: var(--space-6) var(--space-8);
-    /* text-align is not set here: it inherits from the parent section, which
-       is how a section centers its heading across the component boundary
-       that Astro's scoped styles cannot cross. */
+  /* text-align is not set on .heading: it inherits from the parent section,
+     which is how a section centers its heading across the component
+     boundary that Astro's scoped styles cannot cross. */
+  .heading::before {
+    content: "";
+    display: block;
+    inline-size: 2.5rem;
+    block-size: var(--rule-hair);
+    margin-block-end: var(--space-5);
+    background: var(--color-rule);
   }
 
   .heading__eyebrow {

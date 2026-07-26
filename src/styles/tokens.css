@@ -85,13 +85,14 @@
    * 30rem / 48rem / 64rem / 80rem
    */
 
-  /* --- the signature device: an engraved gold plate ------------------------ */
+  /* --- the signature device: a hairline gold rule --------------------------- */
   --rule-hair: 1px;
-  --plate-inset: 0.5rem;
   --radius: 2px;
   --shadow-card: 0 1px 2px rgb(11 21 36 / 6%), 0 8px 24px rgb(11 21 36 / 6%);
 
   /* --- motion ---------------------------------------------------------------- */
-  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --duration: 200ms;
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1); /* interaction */
+  --duration: 200ms; /* interaction */
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1); /* entrance: slow settle */
+  --duration-entrance: 640ms;
 }

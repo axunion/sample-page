@@ -14,7 +14,7 @@ for (const client of clients) {
   <SectionHeading id="clients-heading" en="CLIENTS" ja="取引実績" />
 
   <div class="container">
-    <div class="clients__groups">
+    <div class="clients__groups reveal">
       {
         [...groups].map(([category, names]) => (
           <div class="clients__group">
@@ -37,7 +37,6 @@ for (const client of clients) {
     display: grid;
     gap: var(--space-8);
     margin: var(--space-12) 0 0;
-    padding-inline: var(--space-8);
   }
 
   .clients__group {
@@ -65,7 +64,6 @@ for (const client of clients) {
 
   .clients__note {
     margin: var(--space-6) 0 0;
-    padding-inline: var(--space-8);
     color: var(--color-text-muted);
     font-size: var(--text-xs);
   }

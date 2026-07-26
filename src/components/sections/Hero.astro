@@ -116,4 +116,49 @@ import heroImage from "../../assets/images/hero-concierge.jpg";
       display: block;
     }
   }
+
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+
+  /* The <h1> is the LCP element: an element at opacity 0 does not count as
+     painted, so it moves without fading. */
+  @keyframes hero-settle {
+    from {
+      transform: translateY(10px);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__eyebrow,
+    .hero__lead,
+    .hero__actions,
+    .hero__vertical-label {
+      animation: hero-rise var(--duration-entrance) var(--ease-entrance) backwards;
+    }
+
+    .hero__title {
+      animation: hero-settle var(--duration-entrance) var(--ease-entrance) backwards;
+      animation-delay: 140ms;
+    }
+
+    .hero__eyebrow {
+      animation-delay: 80ms;
+    }
+
+    .hero__lead {
+      animation-delay: 240ms;
+    }
+
+    .hero__actions {
+      animation-delay: 340ms;
+    }
+
+    .hero__vertical-label {
+      animation-delay: 460ms;
+    }
+  }
 </style>

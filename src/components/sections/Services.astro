@@ -7,10 +7,10 @@ import SectionHeading from "../SectionHeading.astro";
   <SectionHeading id="services-heading" en="SERVICES" ja="サービス" />
 
   <div class="container">
-    <ul class="services__grid">
+    <ul class="services__grid reveal">
       {
         services.map((service) => (
-          <li class="services__card plate">
+          <li class="services__card">
             <p class="services__title-en label-latin">{service.titleEn}</p>
             <h3 class="services__title">{service.title}</h3>
             <p class="services__summary">{service.summary}</p>

@@ -1,5 +1,5 @@
 <section id="recruit" class="section section--dark recruit" aria-labelledby="recruit-heading">
-  <div class="container recruit__inner plate">
+  <div class="container recruit__inner reveal">
     <p class="recruit__eyebrow label-latin">RECRUIT</p>
     <h2 id="recruit-heading" class="recruit__title">現場で、次のキャリアを。</h2>
     <p class="recruit__lead">
@@ -13,13 +13,21 @@
   .recruit__inner {
     max-width: 48rem;
     margin-inline: auto;
-    padding: var(--space-12) var(--space-8);
     text-align: center;
   }
 
   .recruit__eyebrow {
     margin: 0 0 var(--space-4);
     color: var(--color-accent);
+  }
+
+  .recruit__eyebrow::before {
+    content: "";
+    display: block;
+    inline-size: 2.5rem;
+    block-size: var(--rule-hair);
+    margin: 0 auto var(--space-5);
+    background: var(--color-rule);
   }
 
   .recruit__title {

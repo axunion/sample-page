@@ -3,10 +3,10 @@ import SectionHeading from "../SectionHeading.astro";
 ---
 
 <section id="philosophy" class="section" aria-labelledby="philosophy-heading">
-  <div class="container philosophy">
-    <SectionHeading id="philosophy-heading" en="PHILOSOPHY" ja="理念" />
+  <SectionHeading id="philosophy-heading" en="PHILOSOPHY" ja="理念" />
 
-    <div class="philosophy__body">
+  <div class="container">
+    <div class="philosophy__body reveal">
       <p class="philosophy__lead">
         人が育つ現場をつくる。<br />
         それが、紬という社名に込めた想いです。
@@ -22,15 +22,9 @@ import SectionHeading from "../SectionHeading.astro";
 </section>
 
 <style>
-  .philosophy {
-    display: grid;
-    gap: var(--space-12);
-  }
-
   .philosophy__body {
     max-width: var(--width-text);
-    margin-inline: auto;
-    padding-inline: var(--space-8);
+    margin: var(--space-12) auto 0;
   }
 
   .philosophy__lead {

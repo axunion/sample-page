@@ -8,7 +8,7 @@ import SectionHeading from "../SectionHeading.astro";
   <SectionHeading id="cases-heading" en="CASES" ja="導入事例" />
 
   <div class="container">
-    <ul class="cases__grid">
+    <ul class="cases__grid reveal">
       {
         cases.map((item) => (
           <li class="cases__card">
@@ -21,7 +21,7 @@ import SectionHeading from "../SectionHeading.astro";
               format="webp"
               quality={72}
             />
-            <div class="cases__body plate">
+            <div class="cases__body">
               <p class="cases__industry">{item.industryLabel}</p>
               <h3 class="cases__client">{item.client}</h3>
 

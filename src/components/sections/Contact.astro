@@ -7,7 +7,7 @@ import SectionHeading from "../SectionHeading.astro";
   <SectionHeading id="contact-heading" en="CONTACT" ja="お問い合わせ" />
 
   <div class="container">
-    <div class="contact plate">
+    <div class="contact reveal">
       <p class="contact__lead">
         現場運営や人材育成についてのご相談、資料請求など、お気軽にお問い合わせください。
       </p>
@@ -34,7 +34,8 @@ import SectionHeading from "../SectionHeading.astro";
   .contact {
     max-width: var(--width-content);
     margin: var(--space-12) 0 0;
-    padding: var(--space-10) var(--space-8);
+    padding: var(--space-10) 0 0;
+    border-top: var(--rule-hair) solid var(--color-rule);
   }
 
   .contact__lead {
