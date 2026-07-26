@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 # Temporary preview deployment for client review — see astro.config.mjs
 # (GITHUB_PAGES env var) for how this differs from the real production
-# build. Requires Settings → Pages → Source = "GitHub Actions" enabled once.
+# build.
 
 on:
   push:
@@ -40,6 +40,8 @@ jobs:
           GITHUB_PAGES: "true"
 
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
