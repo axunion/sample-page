@@ -3,6 +3,12 @@ name: Deploy to GitHub Pages
 # Temporary preview deployment for client review — see astro.config.mjs
 # (GITHUB_PAGES env var) for how this differs from the real production
 # build.
+#
+# One-time manual step required before the first run: the GITHUB_TOKEN
+# cannot create a Pages site via the API (fails with "Resource not
+# accessible by integration"), so someone with admin on this repo must
+# visit Settings → Pages → Build and deployment → Source, and pick
+# "GitHub Actions" once. After that, this workflow handles every deploy.
 
 on:
   push:

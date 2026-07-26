@@ -57,9 +57,11 @@ All commands run from the project root:
 
 `.github/workflows/deploy.yml` builds and deploys this repo to GitHub Pages on every
 push to `main`, at `https://axunion.github.io/sample-page/`, for client review before the
-real domain is ready. The workflow enables Pages via the API on first run
-(`actions/configure-pages` with `enablement: true`), so no manual Settings step is
-needed.
+real domain is ready. **Before the first run**, someone with admin on this repo must
+visit **Settings → Pages → Build and deployment → Source** and pick **"GitHub Actions"**
+once — the workflow's token cannot create the Pages site itself (the GitHub API rejects
+that as "Resource not accessible by integration" regardless of the permissions granted in
+the workflow file). After that one-time step, every push to `main` deploys automatically.
 
 This preview build sets `GITHUB_PAGES=true`, which `astro.config.mjs` uses to switch
 `site`/`base` to the GitHub Pages URL, and which `BaseLayout.astro` uses to emit
