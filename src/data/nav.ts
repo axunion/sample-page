@@ -9,8 +9,8 @@ export type NavItem = {
 
 export const nav = [
   { label: "理念", href: "#philosophy" },
+  { label: "強み", href: "#strengths" },
   { label: "サービス", href: "#services" },
-  { label: "導入事例", href: "#cases" },
   { label: "会社概要", href: "#company" },
   { label: "お問い合わせ", href: "#contact" },
 ] as const satisfies readonly NavItem[];

@@ -92,8 +92,7 @@ fact — page components only read from `src/data/*`.
 - `src/data/company.ts` — legal name, address, phone, email, business details
 - `src/data/nav.ts` — navigation labels and links
 - `src/data/services.ts` — services offered
-- `src/data/cases.ts` — case studies
-- `src/data/stats.ts` — track-record figures
+- `src/data/strengths.ts` — competitive strengths
 - `src/data/clients.ts` — past clients
 - `public/favicon.svg` — brand mark
 - `src/assets/images/` — stock photography (see `docs/image-credits.md`); replace with

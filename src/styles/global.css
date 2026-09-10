@@ -95,6 +95,27 @@ a {
   color: var(--color-text);
 }
 
+/*
+ * The type/space scale is tuned for tablet and up; below 48rem the clamp()
+ * minimums and desktop spacing read oversized against the narrower measure.
+ * Re-declare the tokens here rather than lowering the shared defaults, so
+ * desktop is untouched — same pattern as .section--dark's overrides above.
+ */
+@media (width < 48rem) {
+  :root {
+    --text-base: 0.9375rem;
+    --text-sm: 0.8125rem;
+    --text-lg: 1.0625rem;
+    --text-xl: clamp(1.125rem, 1rem + 1.5vw, 1.375rem);
+    --text-2xl: clamp(1.375rem, 1.1rem + 2.5vw, 1.75rem);
+    --text-3xl: clamp(1.75rem, 1.2rem + 4vw, 2.25rem);
+    --leading-body: 1.7;
+    --tracking-jp: 0.02em;
+    --section-py: clamp(3rem, 12vw, 4rem);
+    --space-12: 2rem;
+  }
+}
+
 /* --- entrance ------------------------------------------------------------- */
 @keyframes reveal-rise {
   from {

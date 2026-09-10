@@ -1,0 +1,47 @@
+---
+import SectionHeading from "../SectionHeading.astro";
+---
+
+<section id="vision" class="section" aria-labelledby="vision-heading">
+  <SectionHeading id="vision-heading" en="VISION" ja="展望" />
+
+  <div class="container">
+    <div class="vision__body reveal">
+      <p class="vision__lead">
+        私たちは、単なる『運営の代行者』に留まるつもりはございません。
+      </p>
+      <p>
+        日本の高級不動産およびラグジュアリーホテル市場において、ウェルネス施設の充実度は、資産価値や顧客満足度を左右する決定的なファクターとなっています。しかし、運用の属人化やコストの肥大化によって、そのポテンシャルを最大限に活かしきれていない施設が散見されるのが現状です。
+      </p>
+      <p>
+        今後は、既存施設の効率化リニューアル（運営受託）を力強く推進するとともに、デベロッパー様の新規開発段階から参画する『オペレーションプランニング・設計コンサルティング』にさらに注力してまいります。オーナー様の理想のビジョンに合わせ、最適な動線設計、最新マシンの選定、そしてオープン後のシームレスな運営と公的申請までをパッケージで提供いたします。
+      </p>
+      <p>
+        『日本で最も洗練され、かつ最も効率的に稼働するウェルネス空間』の新たなスタンダードを創り出し、日本のラグジュアリーウェルネスの発展に寄与してまいります。
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .vision__body {
+    max-width: var(--width-text);
+    margin: 0 auto;
+  }
+
+  .vision__lead {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 500;
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-jp);
+  }
+
+  .vision__body p {
+    color: var(--color-text-muted);
+  }
+
+  .vision__body p + p {
+    margin-top: var(--space-6);
+  }
+</style>

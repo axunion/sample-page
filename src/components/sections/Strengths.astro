@@ -1,0 +1,70 @@
+---
+import { strengths } from "../../data/strengths";
+import SectionHeading from "../SectionHeading.astro";
+---
+
+<section id="strengths" class="section section--dark" aria-labelledby="strengths-heading">
+  <SectionHeading id="strengths-heading" en="WHY US" ja="当社の強み" />
+
+  <div class="container">
+    <ul class="strengths__grid list-reset reveal">
+      {
+        strengths.map((strength) => (
+          <li class="strengths__card">
+            <h3 class="strengths__title">{strength.title}</h3>
+            <p class="strengths__body">{strength.body}</p>
+            {strength.points && (
+              <ul class="strengths__points list-reset">
+                {strength.points.map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .strengths__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .strengths__card {
+    padding: var(--space-8);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .strengths__title {
+    margin: 0 0 var(--space-4);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    letter-spacing: var(--tracking-jp);
+  }
+
+  .strengths__body {
+    margin: 0;
+    color: var(--color-text-muted);
+  }
+
+  .strengths__points {
+    display: grid;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+    padding-top: var(--space-4);
+    border-top: var(--rule-hair) solid var(--color-rule);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  @media (width >= 48rem) {
+    .strengths__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

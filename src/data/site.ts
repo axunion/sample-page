@@ -12,8 +12,8 @@ export type Site = {
 export const site = {
   name: "株式会社紬",
   nameEn: "TSUMUGI Inc.",
-  tagline: "その上質さは、現場がつくる。",
+  tagline: "日常を極上のウェルネスへ。",
   description:
-    "株式会社紬は、ホテル・フィットネス・ウェルネス業界の現場運営と人材育成を支援する会社です。",
+    "株式会社紬は、パレスホテル東京やフォーシーズンズ大手町をはじめとする日本屈指のラグジュアリーホテル・高級マンションのウェルネス施設運営を受託し、品質を落とさないスマートなコスト最適化を実現します。",
   locale: "ja_JP",
 } as const satisfies Site;

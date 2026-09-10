@@ -6,11 +6,10 @@ export type Client = {
 };
 
 export const clients = [
-  { name: "ホテル・ヴェルダン東京", category: "ホテル" },
-  { name: "グランドテラス箱根", category: "ホテル" },
-  { name: "ベイサイドホテル横浜", category: "ホテル" },
-  { name: "クラブフィット町田", category: "フィットネス" },
-  { name: "フィットベース渋谷", category: "フィットネス" },
-  { name: "アーバンスパ&ウェルネス青山", category: "ウェルネス" },
-  { name: "リラクゼーション凛 表参道", category: "ウェルネス" },
+  { name: "パレスホテル東京（エヴィアンスパ）", category: "ホテル" },
+  { name: "フォーシーズンズ大手町（ウェルネス施設）", category: "ホテル" },
+  { name: "ROKU KYOTO, LXR Hotels and Resorts", category: "ホテル" },
+  { name: "ウェスティンホテル横浜", category: "ホテル" },
+  { name: "パークコート青山ザタワー", category: "高級マンション" },
+  { name: "ザコート神宮外苑", category: "高級マンション" },
 ] as const satisfies readonly Client[];

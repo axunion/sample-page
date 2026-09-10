@@ -15,19 +15,20 @@ import heroImage from "../../assets/images/hero-concierge.jpg";
   />
   <div class="hero__scrim" aria-hidden="true"></div>
 
-  <p class="hero__vertical-label" aria-hidden="true">人が育つ現場をつくる</p>
+  <p class="hero__vertical-label" aria-hidden="true">日常を極上のウェルネスへ</p>
 
   <div class="container hero__content">
     <p class="hero__eyebrow label-latin">TSUMUGI INC.</p>
-    <h1 id="hero-heading" class="hero__title">その上質さは、<br />現場がつくる。</h1>
+    <h1 id="hero-heading" class="hero__title">
+      日常を極上のウェルネスへ。<br />実績が紡ぐ、次世代の施設運営受託。
+    </h1>
     <p class="hero__lead">
-      ホテル・フィットネス・ウェルネス業界の現場運営と人材育成を、<br />
-      経験に裏打ちされたノウハウで支援します。
+      真のホスピタリティは、完璧なオペレーションから生まれる。<br />
+      世界のVIPを魅了する品質を、スマートなコストマネジメントで。
     </p>
 
     <div class="hero__actions">
       <a class="btn btn--primary" href="#contact">企業のご担当者さまへ</a>
-      <a class="btn btn--ghost" href="#recruit">採用情報を見る</a>
     </div>
   </div>
 </section>
@@ -65,7 +66,13 @@ import heroImage from "../../assets/images/hero-concierge.jpg";
 
   .hero__content {
     position: relative;
-    padding-block: var(--space-16) var(--space-20);
+    padding-block: var(--space-10) var(--space-12);
+  }
+
+  @media (width >= 48rem) {
+    .hero__content {
+      padding-block: var(--space-16) var(--space-20);
+    }
   }
 
   .hero__vertical-label {
