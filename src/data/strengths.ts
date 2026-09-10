@@ -4,7 +4,7 @@ export type Strength = {
   readonly id: string;
   readonly title: string;
   readonly body: string;
-  readonly points?: readonly string[];
+  readonly points: readonly string[];
 };
 
 export const strengths = [
@@ -12,11 +12,13 @@ export const strengths = [
     id: "track-record",
     title: "日本最高峰のラグジュアリー施設における確固たる運営実績",
     body: "パレスホテル東京（エヴィアンスパ）、フォーシーズンズ大手町（ウェルネス施設）、ROKU KYOTO, LXR Hotels and Resorts、ウェスティンホテル横浜、さらにはパークコート青山ザタワー、ザコート神宮外苑といった、国内外のVIPが集う超一流ホテル・高級マンションでの受託・管理経験を誇ります。世界基準の語学対応（基本英語）と、ブランド価値を損なわない卓越したホスピタリティ教育を体系化し、現場へ確実に実装いたします。",
+    points: [],
   },
   {
     id: "cost-optimization",
     title: "品質を一切妥協しない、5〜10％のスマートなコスト削減",
     body: "現状の施設管理体制をゼロベースで見直し、過剰な固定費や運用の無駄を徹底的に排除します。これまで培った独自のオペレーションプランニングにより、ゲストへの提供価値やサービス品質を極限まで高めたまま、運営費用の「通常5〜10％の削減」をお約束いたします。経営効率化を追求する総支配人様・管理組合様の期待に、確かな数字でお応えします。",
+    points: [],
   },
   {
     id: "full-service",
@@ -32,5 +34,6 @@ export const strengths = [
     id: "coaching",
     title: "ゲストのロイヤリティを高める「運動の習慣化」指導ノウハウ",
     body: "代表の鈴木雅幸は、長年にわたり社内トップクラスのパーソナルトレーナーとして、高齢者、低体力者、術後のリハビリテーションなど、幅広い層の指導にあたってまいりました。この知見を活かし、自重や簡単な器具を用いた「自宅や客室でも継続できる高品質な指導プログラム」を施設に導入。ただ施設を維持するだけでなく、ゲストが何度も通いたくなる「付加価値の高いソフトウエア」を提供します。",
+    points: [],
   },
 ] as const satisfies readonly Strength[];

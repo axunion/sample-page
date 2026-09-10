@@ -13,7 +13,7 @@ import SectionHeading from "../SectionHeading.astro";
           <li class="strengths__card">
             <h3 class="strengths__title">{strength.title}</h3>
             <p class="strengths__body">{strength.body}</p>
-            {strength.points && (
+            {strength.points.length > 0 && (
               <ul class="strengths__points list-reset">
                 {strength.points.map((point) => (
                   <li>{point}</li>
