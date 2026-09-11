@@ -44,14 +44,11 @@ const organization = {
   email: company.email,
   // company.established is a Japanese display string ("2016年4月"), not
   // ISO 8601, so it is intentionally not passed here as `foundingDate`.
-  address: {
+  address: company.offices.map((office) => ({
     "@type": "PostalAddress",
     addressCountry: "JP",
-    postalCode: company.address.postalCode,
-    addressRegion: company.address.region,
-    addressLocality: company.address.locality,
-    streetAddress: company.address.street,
-  },
+    streetAddress: office.address,
+  })),
 };
 ---
 

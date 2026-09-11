@@ -10,10 +10,10 @@ export type Site = {
 };
 
 export const site = {
-  name: "株式会社紬",
-  nameEn: "TSUMUGI Inc.",
+  name: "合同会社 MODESTY FIT",
+  nameEn: "MODESTY FIT LLC",
   tagline: "日常を極上のウェルネスへ。",
   description:
-    "株式会社紬は、パレスホテル東京やフォーシーズンズ大手町をはじめとする日本屈指のラグジュアリーホテル・高級マンションのウェルネス施設運営を受託し、品質を落とさないスマートなコスト最適化を実現します。",
+    "合同会社 MODESTY FITは、パレスホテル東京やフォーシーズンズ大手町をはじめとする日本屈指のラグジュアリーホテル・高級マンションのウェルネス施設運営を受託し、品質を落とさないスマートなコスト最適化を実現します。",
   locale: "ja_JP",
 } as const satisfies Site;

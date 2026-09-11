@@ -45,8 +45,14 @@ import SectionHeading from "../SectionHeading.astro";
         <tr>
           <th scope="row">所在地</th>
           <td>
-            〒{company.address.postalCode}{" "}
-            {company.address.region}{company.address.locality}{company.address.street}
+            <ul class="company-table__list list-reset">
+              {company.offices.map((office) => (
+                <li>
+                  <span class="company-table__office-label">{office.label}</span>
+                  {office.address}
+                </li>
+              ))}
+            </ul>
           </td>
         </tr>
       </tbody>
@@ -88,6 +94,12 @@ import SectionHeading from "../SectionHeading.astro";
 
   .company-table__en {
     margin-inline-start: var(--space-3);
+  }
+
+  .company-table__office-label {
+    display: inline-block;
+    min-inline-size: 6em;
+    color: var(--color-accent);
   }
 
   @media (width < 30rem) {

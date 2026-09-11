@@ -1,15 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" role="img" aria-labelledby="logo-title">
-	<title id="logo-title">株式会社紬</title>
+	<title id="logo-title">合同会社 MODESTY FIT</title>
 	<rect x="0.5" y="0.5" width="39" height="39" fill="none" stroke="#b08d57" stroke-width="1" />
 	<text
 		x="20"
 		y="21"
 		text-anchor="middle"
 		dominant-baseline="central"
-		font-family="'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif"
-		font-size="19"
+		font-family="Helvetica, Arial, sans-serif"
+		font-size="16"
+		letter-spacing="1"
 		fill="#c9a86a"
-	>紬</text>
+	>MF</text>
 	<text
 		x="50"
 		y="17"
@@ -17,7 +18,7 @@
 		font-family="'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif"
 		font-size="15"
 		fill="#f5f2ea"
-	>株式会社紬</text>
+	>MODESTY FIT</text>
 	<text
 		x="50"
 		y="31"
@@ -26,5 +27,5 @@
 		font-size="8"
 		letter-spacing="2"
 		fill="#b9c3d0"
-	>TSUMUGI INC.</text>
+	>MODESTY FIT LLC</text>
 </svg>

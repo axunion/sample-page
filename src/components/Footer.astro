@@ -27,7 +27,7 @@ const year = new Date().getFullYear();
   </div>
 
   <div class="container footer__bottom">
-    <p>{company.address.region}{company.address.locality}{company.address.street}</p>
+    <p>{company.offices[0].address}</p>
     <p>&copy; {year} {site.name}</p>
   </div>
 </footer>

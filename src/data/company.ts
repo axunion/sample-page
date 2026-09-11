@@ -1,5 +1,10 @@
 // PLACEHOLDER CONTENT — replace with the client's real data.
 
+export type Office = {
+  readonly label: string;
+  readonly address: string;
+};
+
 export type CompanyProfile = {
   readonly name: string;
   readonly nameEn: string;
@@ -8,12 +13,7 @@ export type CompanyProfile = {
   readonly representative: string;
   readonly employees: string;
   readonly businessLines: readonly string[];
-  readonly address: {
-    readonly postalCode: string;
-    readonly region: string;
-    readonly locality: string;
-    readonly street: string;
-  };
+  readonly offices: readonly Office[];
   readonly tel: string;
   readonly telHref: string;
   readonly email: string;
@@ -21,27 +21,20 @@ export type CompanyProfile = {
 };
 
 export const company = {
-  name: "株式会社紬",
-  nameEn: "TSUMUGI Inc.",
-  established: "2016年4月",
-  capital: "3,000万円",
-  representative: "代表 鈴木 雅幸",
-  employees: "48名（2026年4月時点）",
-  businessLines: [
-    "ラグジュアリーホテル・高級マンション ウェルネス施設の運営受託",
-    "施設運営における人材の採用・育成・シフトマネジメント",
-    "施設・機器メンテナンス、プール清掃および水質管理",
-    "プール監視業務の警備業申請、保健所対応など公的手続きの代行",
-    "新規開発向けオペレーションプランニング・設計コンサルティング",
+  name: "合同会社 MODESTY FIT",
+  nameEn: "MODESTY FIT LLC",
+  established: "【設立年月 未定】",
+  capital: "【資本金 未定】",
+  representative: "【代表者名 未定】",
+  employees: "22名（正社員・アルバイト・業務委託スタッフを含む）",
+  businessLines: ["【事業内容 未定】"],
+  offices: [
+    { label: "本社", address: "東京都豊島区巣1-16-2B309" },
+    { label: "千葉オフィス", address: "千葉県柏市柏3-5-14 3F" },
+    { label: "名古屋オフィス", address: "愛知県名古屋市中区門前町1-60" },
   ],
-  address: {
-    postalCode: "107-0062",
-    region: "東京都",
-    locality: "港区南青山",
-    street: "3-12-8 紬ビル8F",
-  },
-  tel: "03-1234-5678",
-  telHref: "tel:+81312345678",
-  email: "info@example.com",
-  businessHours: "平日 9:00〜18:00（土日祝休）",
+  tel: "090-7186-0946",
+  telHref: "tel:+819071860946",
+  email: "【メールアドレス 未定】",
+  businessHours: "【営業時間 未定】",
 } as const satisfies CompanyProfile;
