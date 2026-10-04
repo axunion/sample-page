@@ -6,21 +6,21 @@
     "runtime": {
       "name": "node",
       "version": "^24",
-      "onFail": "warn"
+      "onFail": "download"
     },
     "packageManager": {
       "name": "pnpm",
       "version": "^12",
-      "onFail": "warn"
+      "onFail": "download"
     }
   },
   "scripts": {
+    "prepare": "lefthook install",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "fix": "biome check --write .",
-    "prepare": "lefthook install"
+    "fix": "biome check --write ."
   },
   "dependencies": {
     "astro": "^7.3.3",
