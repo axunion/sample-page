@@ -23,15 +23,15 @@
     "fix": "biome check --write ."
   },
   "dependencies": {
-    "astro": "^7.3.3",
-    "sharp": "^0.35.4"
+    "astro": "^7.3.5",
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
-    "@biomejs/biome": "2.5.14",
-    "@types/node": "^26.6.1",
-    "browserslist": "^4.29.0",
-    "lefthook": "^2.1.14",
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "^26.6.4",
+    "browserslist": "^4.29.3",
+    "lefthook": "^2.1.16",
     "lightningcss": "^1.33.0",
     "typescript": "^6.0.3"
   },
