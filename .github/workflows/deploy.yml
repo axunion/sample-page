@@ -13,6 +13,16 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    # Only files that affect the built site; docs-only pushes skip the deploy.
+    paths:
+      - "src/**"
+      - "public/**"
+      - "astro.config.mjs"
+      - "tsconfig.json"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
 permissions:
