@@ -88,6 +88,8 @@
   /* --- motion ---------------------------------------------------------------- */
   --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1); /* interaction */
   --duration: 200ms; /* interaction */
+  --duration-rule: 400ms; /* interaction: a hairline drawing itself */
   --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1); /* entrance: slow settle */
   --duration-entrance: 640ms;
+  --duration-reveal: 900ms; /* entrance: content revealed on scroll */
 }

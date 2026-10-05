@@ -7,10 +7,10 @@ import SectionHeading from "../SectionHeading.astro";
   <SectionHeading id="strengths-heading" en="WHY US" ja="当社の強み" />
 
   <div class="container">
-    <ul class="strengths__grid list-reset reveal">
+    <ul class="strengths__grid list-reset reveal-group">
       {
-        strengths.map((strength) => (
-          <li class="strengths__card">
+        strengths.map((strength, i) => (
+          <li class="strengths__card" style={`--i: ${i}`}>
             <h3 class="strengths__title">{strength.title}</h3>
             <p class="strengths__body">{strength.body}</p>
             {strength.points.length > 0 && (

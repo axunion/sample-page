@@ -138,7 +138,19 @@ import heroImage from "../../assets/images/hero-concierge.jpg";
     }
   }
 
+  /* Scale only, never opacity: the image may be the LCP element. The
+     section's overflow: hidden clips the oversized start frame. */
+  @keyframes hero-image-settle {
+    from {
+      transform: scale(1.04);
+    }
+  }
+
   @media (prefers-reduced-motion: no-preference) {
+    .hero__image {
+      animation: hero-image-settle 2400ms var(--ease-entrance) backwards;
+    }
+
     .hero__eyebrow,
     .hero__lead,
     .hero__actions,

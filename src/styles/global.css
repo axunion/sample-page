@@ -116,32 +116,30 @@ a {
 }
 
 /* --- entrance ------------------------------------------------------------- */
-@keyframes reveal-rise {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-}
-
 /*
- * Default state is the final state. The hidden start state exists only where
- * both conditions hold, so a browser without scroll-driven animations
- * (Firefox as of 2026-07) simply shows the content — nothing to un-hide.
+ * Time-based, triggered once on viewport entry by the script in
+ * BaseLayout.astro. A scroll-linked reveal finished in the bottom quarter of
+ * the screen, before the reader's eye got there, and stalled half-faded
+ * whenever scrolling stopped. The hidden start state exists only under
+ * .js-reveal, which that script sets, so without JS everything is visible.
  */
 @media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .reveal {
-      /* The `animation` shorthand resets animation-timeline and
-         animation-range, so it must come first. */
-      animation: reveal-rise linear both;
-      animation-timeline: view();
-      /* A fixed pixel range keeps the reveal identical whatever the
-         element's height is — a percentage range would crawl on a tall
-         stacked grid. The range starts at 0 (not e.g. 100px in) so that on
-         a tall viewport, content already visible at load lands past the
-         end offset instead of stalled mid-fade at partial opacity. */
-      animation-range: cover 0px cover 220px;
-    }
+  .js-reveal :is(.reveal, .reveal-group > *) {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity var(--duration-reveal) var(--ease-entrance),
+      transform var(--duration-reveal) var(--ease-entrance);
+  }
+
+  /* Children of a .reveal-group start in order of their --i index. */
+  .js-reveal .reveal-group > * {
+    transition-delay: calc(var(--i, 0) * 120ms);
+  }
+
+  .js-reveal :is(.reveal.is-revealed, .reveal-group.is-revealed > *) {
+    opacity: 1;
+    transform: none;
   }
 }
 

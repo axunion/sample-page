@@ -46,7 +46,7 @@ import { nav } from "../data/nav";
 </header>
 
 <script>
-  // The page's only script: close the mobile disclosure after a nav choice.
+  // Close the mobile disclosure after a nav choice.
   const disclosure = document.querySelector<HTMLDetailsElement>(".header__disclosure");
   disclosure?.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
@@ -86,12 +86,35 @@ import { nav } from "../data/nav";
   }
 
   .header__nav a {
+    position: relative;
     text-decoration: none;
     font-size: var(--text-sm);
     letter-spacing: var(--tracking-jp);
 
     &:hover {
       color: var(--color-accent);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-inline: 0;
+      inset-block-end: calc(var(--space-1) * -1);
+      block-size: var(--rule-hair);
+      background: var(--color-rule);
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      &::after {
+        transition: transform var(--duration-rule) var(--ease-out);
+      }
     }
   }
 

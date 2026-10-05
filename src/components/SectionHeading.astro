@@ -31,6 +31,20 @@ const { id, ja, en } = Astro.props;
     block-size: var(--rule-hair);
     margin-block-end: var(--space-5);
     background: var(--color-rule);
+    transform-origin: left;
+  }
+
+  /* The rule draws itself just after the heading's own reveal (.reveal in
+     global.css, which also explains .js-reveal and .is-revealed). */
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.js-reveal) .heading::before {
+      transform: scaleX(0);
+      transition: transform 1200ms var(--ease-entrance) 200ms;
+    }
+
+    :global(.js-reveal) .heading.is-revealed::before {
+      transform: none;
+    }
   }
 
   .heading__eyebrow {
