@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" role="img" aria-labelledby="logo-title">
 	<title id="logo-title">合同会社 MODESTY FIT</title>
-	<rect x="0.5" y="0.5" width="39" height="39" fill="none" stroke="#b08d57" stroke-width="1" />
+	<rect x="0.5" y="0.5" width="39" height="39" fill="none" stroke="#d4b477" stroke-width="1" />
 	<text
 		x="20"
 		y="21"
@@ -9,7 +9,7 @@
 		font-family="Helvetica, Arial, sans-serif"
 		font-size="16"
 		letter-spacing="1"
-		fill="#c9a86a"
+		fill="#d4b477"
 	>MF</text>
 	<text
 		x="50"
@@ -17,7 +17,7 @@
 		dominant-baseline="central"
 		font-family="'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif"
 		font-size="15"
-		fill="#f5f2ea"
+		fill="#f4efe7"
 	>MODESTY FIT</text>
 	<text
 		x="50"

@@ -47,7 +47,6 @@ body {
 h1,
 h2,
 h3 {
-  font-family: var(--font-display);
   line-height: var(--leading-heading);
   line-break: strict;
   overflow-wrap: anywhere;
@@ -87,9 +86,9 @@ a {
   --color-surface: var(--navy-800);
   --color-text: var(--white);
   --color-text-muted: var(--slate-300);
-  --color-accent: var(--gold-400); /* 8.1:1 on navy-900 */
+  --color-accent: var(--gold-500); /* 8.7:1 on navy-900 */
   --color-rule: var(--gold-500);
-  --color-focus: var(--gold-300); /* 10.2:1 on navy-900 */
+  --color-focus: var(--gold-300); /* 10.5:1 on navy-900 */
   --color-border: var(--gold-700);
   background: var(--color-bg);
   color: var(--color-text);
@@ -150,7 +149,7 @@ a {
 .label-latin {
   font-family: var(--font-latin);
   font-size: var(--text-xs);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: var(--tracking-latin);
   text-transform: uppercase;
 }
@@ -184,7 +183,7 @@ a {
   padding: var(--space-3) var(--space-6);
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: var(--tracking-jp);
   text-decoration: none;
   border: var(--rule-hair) solid transparent;
@@ -205,8 +204,8 @@ a {
   border-color: var(--gold-500);
 
   &:hover {
-    background: var(--gold-400);
-    border-color: var(--gold-400);
+    background: var(--gold-300);
+    border-color: var(--gold-300);
   }
 }
 

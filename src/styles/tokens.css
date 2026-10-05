@@ -5,14 +5,13 @@
  */
 :root {
   /* --- brand primitives -------------------------------------------------- */
-  --navy-900: #0b1524;
-  --navy-800: #101f33;
+  --navy-900: #101b2b; /* client-specified main color */
+  --navy-800: #15253a;
   --navy-600: #1e3450;
   --gold-700: #6f5327;
-  --gold-500: #b08d57;
-  --gold-400: #c9a86a;
-  --gold-300: #d9bf86;
-  --ivory: #f5f2ea;
+  --gold-500: #d4b477; /* client-specified accent */
+  --gold-300: #dfc799;
+  --ivory: #f4efe7; /* client-specified light background */
   --white: #ffffff;
   --ink-700: #33415c;
   --slate-300: #b9c3d0;
@@ -35,16 +34,14 @@
   --color-border: var(--navy-600);
 
   /* --- type ---------------------------------------------------------------
-   * --font-shippori / --font-jost are declared by Astro's <Font> component
-   * (astro.config.mjs `fonts`). Alias them here rather than reading them
-   * directly, since both files write to :root and a shared name would race.
-   * --font-body has no self-hosted counterpart: see astro.config.mjs for why.
+   * --font-noto-sans-jp / --font-noto-serif are declared by Astro's <Font>
+   * component (astro.config.mjs `fonts`). Alias them here rather than reading
+   * them directly, since both files write to :root and a shared name would race.
+   * Client spec: Japanese text (headings included) in Noto Sans JP, Latin text
+   * in Noto Serif, both Regular only.
    */
-  --font-display: var(--font-shippori);
-  --font-latin: var(--font-jost);
-  --font-body:
-    "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", YuGothic,
-    "Yu Gothic", "BIZ UDPGothic", Meiryo, sans-serif;
+  --font-latin: var(--font-noto-serif);
+  --font-body: var(--font-noto-sans-jp);
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -86,7 +83,7 @@
   /* --- the signature device: a hairline gold rule --------------------------- */
   --rule-hair: 1px;
   --radius: 2px;
-  --shadow-card: 0 1px 2px rgb(11 21 36 / 6%), 0 8px 24px rgb(11 21 36 / 6%);
+  --shadow-card: 0 1px 2px rgb(16 27 43 / 6%), 0 8px 24px rgb(16 27 43 / 6%);
 
   /* --- motion ---------------------------------------------------------------- */
   --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1); /* interaction */

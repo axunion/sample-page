@@ -76,11 +76,11 @@ Cloudflare Pages + Access) rather than GitHub Pages.
 
 ## Fonts
 
-Headings use Shippori Mincho B1 and Latin labels use Jost, both self-hosted via Astro's
-built-in `fonts` config (Google provider, downloaded at build time). Body copy
-intentionally uses a system font stack (see `src/styles/tokens.css`) instead of a
-self-hosted Japanese sans — Google's CJK families split into 100+ font files per weight,
-which is only worth the build cost for the display serif used in headings.
+Per the client's spec, all Japanese text (headings included) uses Noto Sans JP and Latin
+text (English labels, the English company name) uses Noto Serif, both Regular (400) only.
+Both are self-hosted via Astro's built-in `fonts` config (Google provider, downloaded at
+build time). Google splits Noto Sans JP into ~120 `unicode-range` files, so the build
+downloads all of them but browsers fetch only the slices a page uses; it is not preloaded.
 
 ## Replacing placeholder content
 

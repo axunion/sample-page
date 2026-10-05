@@ -23,30 +23,37 @@ export default defineConfig({
   },
 
   // Self-hosted fonts, downloaded and cached at build time (node_modules/.astro/fonts).
-  // Body copy intentionally uses a system font stack instead (see src/styles/tokens.css):
-  // the Google provider slices CJK families into ~100+ unlabeled files per weight, which
-  // is only worth paying for the display serif used in headings.
+  // Client spec: Japanese text in Noto Sans JP, Latin text in Noto Serif, Regular only.
   //
   // Do not set `subsets`: Google's CJK slices carry no subset comment, so naming a subset
-  // drops every weight after the first. Do not add `preload` to Shippori Mincho B1: each
-  // weight expands to ~120 files and would emit that many preload links.
+  // drops every weight after the first. Do not add `preload` to Noto Sans JP: each weight
+  // expands to ~120 files and would emit that many preload links.
   fonts: [
     {
-      name: "Shippori Mincho B1",
-      cssVariable: "--font-shippori",
+      name: "Noto Sans JP",
+      cssVariable: "--font-noto-sans-jp",
       provider: fontProviders.google(),
-      weights: [500],
+      weights: [400],
       styles: ["normal"],
-      fallbacks: ["Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "serif"],
+      fallbacks: [
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        "Yu Gothic Medium",
+        "YuGothic",
+        "Yu Gothic",
+        "BIZ UDPGothic",
+        "Meiryo",
+        "sans-serif",
+      ],
       optimizedFallbacks: false,
     },
     {
-      name: "Jost",
-      cssVariable: "--font-jost",
+      name: "Noto Serif",
+      cssVariable: "--font-noto-serif",
       provider: fontProviders.google(),
-      weights: [400, 500],
+      weights: [400],
       styles: ["normal"],
-      fallbacks: ["Helvetica Neue", "Arial", "sans-serif"],
+      fallbacks: ["Georgia", "Times New Roman", "serif"],
       optimizedFallbacks: false,
     },
   ],
