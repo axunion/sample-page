@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import heroImage from "../../assets/images/hero-spa.jpg";
+import { contact } from "../../data/nav";
 import { site } from "../../data/site";
 ---
 
@@ -19,7 +20,7 @@ import { site } from "../../data/site";
   <p class="hero__vertical-label" aria-hidden="true">{site.tagline}</p>
 
   <div class="container hero__content">
-    <p class="hero__eyebrow label-latin">MODESTY FIT LLC</p>
+    <p class="hero__eyebrow label-latin">{site.nameEn}</p>
     <h1 id="hero-heading" class="hero__title">
       <span class="hero__title-line">{site.tagline}</span><span class="hero__phrase">実績が紡ぐ、</span><span class="hero__phrase">次世代の施設運営受託</span>
     </h1>
@@ -29,7 +30,7 @@ import { site } from "../../data/site";
     </p>
 
     <div class="hero__actions">
-      <a class="btn btn--primary" href="#contact">企業のご担当者さまへ</a>
+      <a class="btn btn--primary" href={contact.href}>企業のご担当者さまへ</a>
     </div>
   </div>
 </section>
@@ -105,9 +106,9 @@ import { site } from "../../data/site";
   .hero__title {
     margin: 0 0 var(--space-6);
     max-width: 24em;
-    /* The first line is 13 characters and must never wrap, so the size is
-       capped by what fits between the gutters (14 = 13 characters plus
-       letter-spacing). */
+    /* The tagline line must stay on one line, so the size is capped by what
+       fits between the gutters. The divisor is the tagline's character count
+       plus letter-spacing; revisit it if the tagline in site.ts changes length. */
     font-size: min(var(--text-3xl), calc((100vw - 2 * var(--gutter)) / 14));
     font-weight: 400;
     letter-spacing: var(--tracking-jp);
