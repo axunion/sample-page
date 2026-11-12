@@ -84,12 +84,13 @@ downloads all of them but browsers fetch only the slices a page uses; it is not 
 
 ## Replacing placeholder content
 
-Every company fact lives in one of these files. No other file should contain a company
-fact — page components only read from `src/data/*`.
+Company facts and repeated lists live in one of these files, and page components only
+read from `src/data/*` for them. Prose used once (hero, philosophy, vision) is written
+directly in its section component under `src/components/sections/`.
 
 - `astro.config.mjs` — `site` (the real domain; also drives canonical/OG URLs)
 - `src/data/site.ts` — company name, tagline, meta description
-- `src/data/company.ts` — legal name, address, phone, email, business details
+- `src/data/company.ts` — legal name, address, email, business details
 - `src/data/nav.ts` — navigation labels and links
 - `src/data/services.ts` — services offered
 - `src/data/strengths.ts` — competitive strengths
