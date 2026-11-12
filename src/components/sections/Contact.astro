@@ -9,7 +9,7 @@ import SectionHeading from "../SectionHeading.astro";
   <div class="container">
     <div class="contact reveal">
       <p class="contact__lead">
-        現場運営や人材育成についてのご相談、資料請求など、お気軽にお問い合わせください。
+        現場運営や人材育成についてのご相談、資料請求など、お気軽に<span class="contact__phrase">お問い合わせください。</span>
       </p>
 
       <dl class="contact__details">
@@ -36,6 +36,11 @@ import SectionHeading from "../SectionHeading.astro";
     max-width: var(--width-text);
     margin: 0 0 var(--space-8);
     color: var(--color-text-muted);
+  }
+
+  /* Keeps the closing phrase whole in browsers without word-break: auto-phrase. */
+  .contact__phrase {
+    display: inline-block;
   }
 
   .contact__details {
