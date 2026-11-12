@@ -74,6 +74,14 @@ public and unauthenticated if guessed or linked. It is not access control. If th
 needs the preview to be actually private, that requires a different host (e.g.
 Cloudflare Pages + Access) rather than GitHub Pages.
 
+## Release zip for the rental server
+
+Every push to `main` that affects the site runs `.github/workflows/release.yml`, which
+builds the production site (no `GITHUB_PAGES`, so `site` is `https://modestyfit.co.jp`
+and `base` is `/`) and replaces `site.zip` on the single `latest` GitHub Release. The
+zip holds the contents of `dist/`; upload them to the server's document root. The
+workflow can also be run manually from the Actions tab.
+
 ## Fonts
 
 Per the client's spec, all Japanese text (headings included) uses Noto Sans JP and Latin

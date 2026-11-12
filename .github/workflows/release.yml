@@ -1,0 +1,59 @@
+name: Release build
+
+# Builds the production site (no GITHUB_PAGES, so `site`/`base` are the real
+# domain and `/`) and keeps it as site.zip on a single rolling `latest` GitHub
+# Release, for hand-off to the rental server. Each run replaces the previous one.
+
+on:
+  push:
+    branches: [main]
+    # Same filter as deploy.yml: docs-only pushes skip the build.
+    paths:
+      - "src/**"
+      - "public/**"
+      - "astro.config.mjs"
+      - "tsconfig.json"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - ".github/workflows/release.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      # Keep node-version in line with devEngines in package.json.
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: 26
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm build
+
+      - name: Zip dist
+        run: cd dist && zip -qr ../site.zip .
+
+      # Recreate the release so it always points at this commit.
+      - name: Replace latest release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete latest --cleanup-tag --yes || true
+          gh release create latest site.zip \
+            --target "$GITHUB_SHA" \
+            --title "Latest build" \
+            --notes "Production build of ${GITHUB_SHA}. Upload the contents of site.zip to the server's document root."
