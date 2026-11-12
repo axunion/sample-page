@@ -1,6 +1,6 @@
 ---
 import { Font, getImage } from "astro:assets";
-import heroImage from "../assets/images/hero-concierge.jpg";
+import heroImage from "../assets/images/hero-spa.jpg";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { company } from "../data/company";
@@ -40,7 +40,6 @@ const organization = {
   alternateName: site.nameEn,
   url: Astro.site,
   description: site.description,
-  telephone: company.tel,
   email: company.email,
   // company.established is a Japanese display string ("2016年4月"), not
   // ISO 8601, so it is intentionally not passed here as `foundingDate`.

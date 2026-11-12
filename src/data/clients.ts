@@ -6,10 +6,32 @@ export type Client = {
 };
 
 export const clients = [
-  { name: "パレスホテル東京（エヴィアンスパ）", category: "ホテル" },
-  { name: "フォーシーズンズ大手町（ウェルネス施設）", category: "ホテル" },
-  { name: "ROKU KYOTO, LXR Hotels and Resorts", category: "ホテル" },
-  { name: "ウェスティンホテル横浜", category: "ホテル" },
-  { name: "パークコート青山ザタワー", category: "高級マンション" },
-  { name: "ザコート神宮外苑", category: "高級マンション" },
+  {
+    name: "JWマリオットホテル東京（東京都）",
+    category: "ホテル（現受託施設）",
+  },
+  { name: "CONRAD名古屋（名古屋市）", category: "ホテル（現受託施設）" },
+  {
+    name: "パレスホテル東京（エヴィアンスパ）",
+    category: "ホテル（管理実績）",
+  },
+  {
+    name: "フォーシーズンズ大手町（ウェルネス施設）",
+    category: "ホテル（管理実績）",
+  },
+  {
+    name: "ROKU KYOTO, LXR Hotels and Resorts",
+    category: "ホテル（管理実績）",
+  },
+  { name: "ウェスティンホテル横浜", category: "ホテル（管理実績）" },
+  {
+    name: "ROKU KYOTO, LXR Hotels and Resorts",
+    category: "ホテル（コンサル・アドバイス）",
+  },
+  {
+    name: "ウェスティンホテル横浜",
+    category: "ホテル（コンサル・アドバイス）",
+  },
+  { name: "パークコート青山ザタワー", category: "高級マンション（管理実績）" },
+  { name: "ザコート神宮外苑", category: "高級マンション（管理実績）" },
 ] as const satisfies readonly Client[];

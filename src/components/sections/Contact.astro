@@ -14,10 +14,6 @@ import SectionHeading from "../SectionHeading.astro";
 
       <dl class="contact__details">
         <div>
-          <dt>電話</dt>
-          <dd><a href={company.telHref}>{company.tel}</a></dd>
-        </div>
-        <div>
           <dt>メール</dt>
           <dd><a href={`mailto:${company.email}`}>{company.email}</a></dd>
         </div>
@@ -68,7 +64,7 @@ import SectionHeading from "../SectionHeading.astro";
 
   @media (width >= 48rem) {
     .contact__details {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 </style>

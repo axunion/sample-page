@@ -9,9 +9,9 @@ content](../README.md#replacing-placeholder-content).
 Selection criteria: no visible hotel/gym/spa brand names, logos, or signage; no photo used
 to imply a specific pictured person or business is an actual client.
 
-| File                                   | Source                                                                               | Photographer     | License                                           | Downloaded |
-| :------------------------------------- | :----------------------------------------------------------------------------------- | :--------------- | :------------------------------------------------ | :--------- |
-| `src/assets/images/hero-concierge.jpg` | [pexels.com/photo/6474532](https://www.pexels.com/photo/man-in-red-uniform-6474532/) | cottonbro studio | [Pexels License](https://www.pexels.com/license/) | 2026-07-25 |
+| File                             | Source                                                                                                                          | Photographer | License                                           | Downloaded |
+| :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ | :----------- | :------------------------------------------------ | :--------- |
+| `src/assets/images/hero-spa.jpg` | [pexels.com/photo/7031704](https://www.pexels.com/photo/interior-of-modern-luxury-spa-zone-with-loungers-and-bathtubs-7031704/) | Artbovich    | [Pexels License](https://www.pexels.com/license/) | 2026-11-12 |
 
 The Pexels License permits commercial use without attribution, but photographer names are
 recorded here for traceability.
