@@ -1,11 +1,12 @@
 ---
 import Logo from "../assets/logo.svg";
 import { contact, nav } from "../data/nav";
+import { site } from "../data/site";
 ---
 
 <header class="header section--dark">
   <div class="container header__bar">
-    <a class="header__brand" href={import.meta.env.BASE_URL} aria-label="合同会社 MODESTY FIT トップへ">
+    <a class="header__brand" href={import.meta.env.BASE_URL} aria-label={`${site.name} トップへ`}>
       <Logo width="160" height="32" />
     </a>
 
@@ -46,13 +47,34 @@ import { contact, nav } from "../data/nav";
 </header>
 
 <script>
-  // Close the mobile disclosure after a nav choice.
+  // Keep the mobile disclosure's label in sync with its state, and close it
+  // after a nav choice, on Escape, or on a tap outside it.
   const disclosure = document.querySelector<HTMLDetailsElement>(".header__disclosure");
-  disclosure?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
+  const toggle = disclosure?.querySelector("summary");
+
+  if (disclosure && toggle) {
+    const close = () => {
       disclosure.open = false;
+    };
+
+    disclosure.addEventListener("toggle", () => {
+      toggle.setAttribute("aria-label", disclosure.open ? "メニューを閉じる" : "メニューを開く");
     });
-  });
+    disclosure.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", close);
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && disclosure.open) {
+        close();
+        toggle.focus();
+      }
+    });
+    document.addEventListener("click", (event) => {
+      if (disclosure.open && event.target instanceof Node && !disclosure.contains(event.target)) {
+        close();
+      }
+    });
+  }
 </script>
 
 <style>
