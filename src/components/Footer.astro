@@ -1,6 +1,6 @@
 ---
 import { company } from "../data/company";
-import { nav } from "../data/nav";
+import { contact, nav } from "../data/nav";
 import { site } from "../data/site";
 
 const year = new Date().getFullYear();
@@ -16,7 +16,7 @@ const year = new Date().getFullYear();
     <nav class="footer__nav" aria-label="サイトマップ">
       <ul class="list-reset">
         {
-          nav.map((item) => (
+          [...nav, contact].map((item) => (
             <li>
               <a href={item.href}>{item.label}</a>
             </li>
@@ -43,7 +43,6 @@ const year = new Date().getFullYear();
     justify-content: space-between;
     gap: var(--space-8);
     padding-block-end: var(--space-8);
-    border-bottom: var(--rule-hair) solid var(--color-border);
   }
 
   .footer__name {
@@ -71,7 +70,10 @@ const year = new Date().getFullYear();
     }
   }
 
+  /* The rule is drawn here, inside the container's padding, so it lines up
+     with the content edges instead of the container's outer edges. */
   .footer__bottom {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -79,6 +81,14 @@ const year = new Date().getFullYear();
     padding-block-start: var(--space-6);
     color: var(--color-text-muted);
     font-size: var(--text-xs);
+  }
+
+  .footer__bottom::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: var(--gutter);
+    border-top: var(--rule-hair) solid var(--color-border);
   }
 
   .footer__bottom p {

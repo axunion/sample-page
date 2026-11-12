@@ -11,6 +11,13 @@ export const nav = [
   { label: "理念", href: "#philosophy" },
   { label: "強み", href: "#strengths" },
   { label: "サービス", href: "#services" },
+  { label: "受託実績", href: "#clients" },
+  { label: "展望", href: "#vision" },
   { label: "会社概要", href: "#company" },
-  { label: "お問い合わせ", href: "#contact" },
 ] as const satisfies readonly NavItem[];
+
+// Kept apart from `nav`: the header shows it as a button, not as a nav link.
+export const contact = {
+  label: "お問い合わせ",
+  href: "#contact",
+} as const satisfies NavItem;

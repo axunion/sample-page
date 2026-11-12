@@ -1,6 +1,6 @@
 ---
 import Logo from "../assets/logo.svg";
-import { nav } from "../data/nav";
+import { contact, nav } from "../data/nav";
 ---
 
 <header class="header section--dark">
@@ -21,7 +21,7 @@ import { nav } from "../data/nav";
       </ul>
     </nav>
 
-    <a class="btn btn--primary header__cta" href="#contact">お問い合わせ</a>
+    <a class="btn btn--primary header__cta" href={contact.href}>{contact.label}</a>
 
     <details class="header__disclosure">
       <summary class="header__disclosure-toggle" aria-label="メニューを開く">
@@ -39,7 +39,7 @@ import { nav } from "../data/nav";
             ))
           }
         </ul>
-        <a class="btn btn--primary" href="#contact">お問い合わせ</a>
+        <a class="btn btn--primary" href={contact.href}>{contact.label}</a>
       </div>
     </details>
   </div>
