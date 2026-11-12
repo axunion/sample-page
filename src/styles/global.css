@@ -211,13 +211,3 @@ a {
     border-color: var(--gold-300);
   }
 }
-
-.btn--ghost {
-  background: transparent;
-  color: inherit;
-  border-color: currentColor;
-
-  &:hover {
-    background: rgb(255 255 255 / 8%);
-  }
-}

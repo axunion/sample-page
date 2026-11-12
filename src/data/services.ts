@@ -1,7 +1,6 @@
 // PLACEHOLDER CONTENT — replace with the client's real data.
 
 export type Service = {
-  readonly id: string;
   readonly title: string;
   readonly titleEn: string;
   readonly summary: string;
@@ -10,7 +9,6 @@ export type Service = {
 
 export const services = [
   {
-    id: "setup",
     title: "開業までのアドバイス・セッティング全般",
     titleEn: "OPENING SUPPORT",
     summary:
@@ -22,7 +20,6 @@ export const services = [
     ],
   },
   {
-    id: "staffing",
     title: "人員の採用・育成・品質維持・シフト管理",
     titleEn: "STAFFING & TRAINING",
     summary:
@@ -34,7 +31,6 @@ export const services = [
     ],
   },
   {
-    id: "facility",
     title: "施設管理・機器メンテナンス",
     titleEn: "FACILITY & MAINTENANCE",
     summary:
@@ -46,7 +42,6 @@ export const services = [
     ],
   },
   {
-    id: "compliance",
     title: "公的品質管理の完全一元化",
     titleEn: "REGULATORY & RISK MANAGEMENT",
     summary:
