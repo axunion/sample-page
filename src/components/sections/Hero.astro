@@ -21,7 +21,11 @@ import { site } from "../../data/site";
 
   <div class="container hero__content">
     <p class="hero__eyebrow label-latin">{site.nameEn}</p>
-    <h1 id="hero-heading" class="hero__title">
+    <h1
+      id="hero-heading"
+      class="hero__title"
+      style={`--tagline-chars: ${site.tagline.length + 2}`}
+    >
       <span class="hero__title-line">{site.tagline}</span><span class="hero__phrase">実績が紡ぐ、</span><span class="hero__phrase">次世代の施設運営受託</span>
     </h1>
     <p class="hero__lead">
@@ -107,9 +111,9 @@ import { site } from "../../data/site";
     margin: 0 0 var(--space-6);
     max-width: 24em;
     /* The tagline line must stay on one line, so the size is capped by what
-       fits between the gutters. The divisor is the tagline's character count
-       plus letter-spacing; revisit it if the tagline in site.ts changes length. */
-    font-size: min(var(--text-3xl), calc((100vw - 2 * var(--gutter)) / 14));
+       fits between the gutters. --tagline-chars is the tagline's character
+       count plus a margin for letter-spacing, set from site.ts in the markup. */
+    font-size: min(var(--text-3xl), calc((100vw - 2 * var(--gutter)) / var(--tagline-chars)));
     font-weight: 400;
     letter-spacing: var(--tracking-jp);
     text-wrap: balance;
