@@ -9,11 +9,11 @@ const isGithubPagesPreview = process.env.GITHUB_PAGES === "true";
 
 // https://astro.build/config
 export default defineConfig({
-  // PLACEHOLDER — replace with the client's real domain before launch.
-  // Used to build absolute canonical/OG URLs and the Organization JSON-LD.
+  // The client's production domain. Used to build absolute canonical/OG URLs and
+  // the Organization JSON-LD.
   site: isGithubPagesPreview
     ? "https://axunion.github.io"
-    : "https://example.com",
+    : "https://modestyfit.co.jp",
   // GitHub Pages project sites are served under /<repo>/, not /.
   base: isGithubPagesPreview ? "/sample-page/" : "/",
 
