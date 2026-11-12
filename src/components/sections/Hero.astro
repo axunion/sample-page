@@ -60,7 +60,7 @@ import { site } from "../../data/site";
       to top,
       color-mix(in srgb, var(--navy-900) 92%, transparent) 0%,
       color-mix(in srgb, var(--navy-900) 70%, transparent) 35%,
-      color-mix(in srgb, var(--navy-900) 25%, transparent) 65%,
+      color-mix(in srgb, var(--navy-900) 42%, transparent) 65%,
       color-mix(in srgb, var(--navy-900) 10%, transparent) 100%
     );
   }
@@ -98,7 +98,8 @@ import { site } from "../../data/site";
 
   .hero__eyebrow {
     margin: 0 0 var(--space-4);
-    color: var(--color-accent);
+    /* The lighter gold stays legible over the bright photo. */
+    color: var(--gold-300);
   }
 
   .hero__title {
