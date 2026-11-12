@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import heroImage from "../../assets/images/hero-spa.jpg";
+import { site } from "../../data/site";
 ---
 
 <section class="hero section--dark" aria-labelledby="hero-heading">
@@ -15,12 +16,12 @@ import heroImage from "../../assets/images/hero-spa.jpg";
   />
   <div class="hero__scrim" aria-hidden="true"></div>
 
-  <p class="hero__vertical-label" aria-hidden="true">日常を極上のウェルネスへ</p>
+  <p class="hero__vertical-label" aria-hidden="true">{site.tagline}</p>
 
   <div class="container hero__content">
     <p class="hero__eyebrow label-latin">MODESTY FIT LLC</p>
     <h1 id="hero-heading" class="hero__title">
-      <span class="hero__title-line">日常を極上のウェルネスへ。</span>実績が紡ぐ、次世代の施設運営受託。
+      <span class="hero__title-line">{site.tagline}</span><span class="hero__phrase">実績が紡ぐ、</span><span class="hero__phrase">次世代の施設運営受託</span>
     </h1>
     <p class="hero__lead">
       真のホスピタリティは、完璧なオペレーションから生まれる。<br />
@@ -66,6 +67,9 @@ import heroImage from "../../assets/images/hero-spa.jpg";
 
   .hero__content {
     position: relative;
+    /* As a flex item the container would shrink to its content and, with its
+       auto margins, drift away from the header's left edge. */
+    inline-size: 100%;
     padding-block: var(--space-10) var(--space-12);
   }
 
@@ -112,6 +116,11 @@ import heroImage from "../../assets/images/hero-spa.jpg";
   .hero__title-line {
     display: block;
     white-space: nowrap;
+  }
+
+  /* Narrow screens break between phrases, never inside one. */
+  .hero__phrase {
+    display: inline-block;
   }
 
   .hero__lead {
