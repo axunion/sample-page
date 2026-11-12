@@ -33,18 +33,21 @@ for (const client of clients) {
 </section>
 
 <style>
-  .clients__groups {
-    display: grid;
-    gap: var(--space-8);
-  }
-
+  /* A two-column table: category on the left, facility names stacked on the
+     right. Below the breakpoint the columns collapse into one. */
   .clients__group {
+    display: grid;
+    gap: var(--space-3) var(--space-8);
     padding-block: var(--space-6);
     border-top: var(--rule-hair) solid var(--color-rule);
   }
 
+  .clients__group:last-child {
+    border-bottom: var(--rule-hair) solid var(--color-rule);
+  }
+
   .clients__category {
-    margin: 0 0 var(--space-4);
+    margin: 0;
     color: var(--color-accent);
     font-size: var(--text-sm);
     font-weight: 400;
@@ -52,14 +55,19 @@ for (const client of clients) {
   }
 
   .clients__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2) var(--space-6);
+    display: grid;
+    gap: var(--space-2);
     color: var(--color-text-muted);
   }
 
+  @media (width >= 48rem) {
+    .clients__group {
+      grid-template-columns: 16rem 1fr;
+    }
+  }
+
   .clients__note {
-    margin: var(--space-6) 0 0;
+    margin: var(--space-4) 0 0;
     color: var(--color-text-muted);
     font-size: var(--text-xs);
   }

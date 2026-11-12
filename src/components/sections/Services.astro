@@ -29,8 +29,14 @@ import SectionHeading from "../SectionHeading.astro";
 <style>
   .services__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    grid-template-columns: 1fr;
     gap: var(--space-8);
+  }
+
+  @media (width >= 48rem) {
+    .services__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .services__card {

@@ -98,11 +98,17 @@ import SectionHeading from "../SectionHeading.astro";
 
   .company-table__office-label {
     display: inline-block;
-    min-inline-size: 6em;
+    /* Wide enough for the longest label (7 characters) plus a gap. */
+    min-inline-size: 8em;
     color: var(--color-accent);
   }
 
   @media (width < 30rem) {
+    .company-table__office-label {
+      display: block;
+      min-inline-size: 0;
+    }
+
     .company-table th {
       inline-size: auto;
     }
