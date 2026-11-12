@@ -44,14 +44,14 @@ rather than reuse a section component.
 
 All commands run from the project root:
 
-| Command         | Action                                           |
-| :--------------- | :----------------------------------------------- |
-| `pnpm install`   | Install dependencies                              |
-| `pnpm dev`       | Start the local dev server at `localhost:4321`    |
-| `pnpm build`     | Build the production site to `./dist/`            |
-| `pnpm preview`   | Preview the build locally                         |
-| `pnpm fix`       | Format and lint with Biome                        |
-| `pnpm astro ...` | Run Astro CLI commands, e.g. `astro check`        |
+| Command          | Action                                         |
+| :--------------- | :--------------------------------------------- |
+| `pnpm install`   | Install dependencies                           |
+| `pnpm dev`       | Start the local dev server at `localhost:4321` |
+| `pnpm build`     | Build the production site to `./dist/`         |
+| `pnpm preview`   | Preview the build locally                      |
+| `pnpm fix`       | Format and lint with Biome                     |
+| `pnpm astro ...` | Run Astro CLI commands, e.g. `astro check`     |
 
 ## Temporary GitHub Pages preview
 
