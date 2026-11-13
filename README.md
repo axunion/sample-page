@@ -97,7 +97,7 @@ read from `src/data/*` for them. Prose used once (hero, philosophy, vision) is w
 directly in its section component under `src/components/sections/`.
 
 - `astro.config.mjs` — `site` (the real domain; also drives canonical/OG URLs)
-- `src/data/site.ts` — company name, tagline, meta description
+- `src/data/site.ts` — company name, meta description
 - `src/data/company.ts` — legal name, address, email, business details
 - `src/data/nav.ts` — navigation labels and links
 - `src/data/services.ts` — services offered

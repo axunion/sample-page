@@ -6,7 +6,7 @@ specific to this repo. See README.md for structure, commands, and deployment.
 
 ## Content
 
-- Values used in more than one place (company facts, nav, site name and tagline) and
+- Values used in more than one place (company facts, nav, site name) and
   lists rendered as repeated cards (strengths, services, clients) live in
   `src/data/*.ts` (plus `site` in `astro.config.mjs`). Components read from there and
   never hard-code them. Prose used once (hero, philosophy, vision, section leads) stays

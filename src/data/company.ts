@@ -34,5 +34,5 @@ export const company = {
     { label: "名古屋オフィス", address: "愛知県名古屋市中区門前町1-60" },
   ],
   email: "modestyfit@modestyfit.com",
-  businessHours: "10時から18時",
+  businessHours: "10:00〜18:00",
 } as const satisfies CompanyProfile;

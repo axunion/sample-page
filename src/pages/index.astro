@@ -11,7 +11,7 @@ import { site } from "../data/site";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title={`${site.name}｜${site.tagline}`} description={site.description}>
+<BaseLayout title={site.name} description={site.description}>
   <Hero />
   <Philosophy />
   <Strengths />

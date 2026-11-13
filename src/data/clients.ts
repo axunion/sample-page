@@ -10,7 +10,7 @@ export const clients = [
     name: "JWマリオットホテル東京（東京都）",
     category: "ホテル（現受託施設）",
   },
-  { name: "CONRAD名古屋（名古屋市）", category: "ホテル（現受託施設）" },
+  { name: "コンラッド名古屋（名古屋市）", category: "ホテル（現受託施設）" },
   {
     name: "パレスホテル東京（エヴィアンスパ）",
     category: "ホテル（管理実績）",
@@ -19,11 +19,6 @@ export const clients = [
     name: "フォーシーズンズ大手町（ウェルネス施設）",
     category: "ホテル（管理実績）",
   },
-  {
-    name: "ROKU KYOTO, LXR Hotels and Resorts",
-    category: "ホテル（管理実績）",
-  },
-  { name: "ウェスティンホテル横浜", category: "ホテル（管理実績）" },
   {
     name: "ROKU KYOTO, LXR Hotels and Resorts",
     category: "ホテル（コンサル・アドバイス）",
